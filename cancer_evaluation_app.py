@@ -178,8 +178,8 @@ if not disabled and st.button("🔍 Get Result"):
             df = pd.concat([df, pd.DataFrame([record])], ignore_index=True)
         else:
             df = pd.DataFrame([record])
-       #tony df.to_csv(file, index=False)
-        save_to_google_sheet(record)
+        df.to_csv(file, index=False)
+       #tony save_to_google_sheet(record)
         st.info("✅ Evaluation saved successfully to evaluations.csv")
 
         # --- PDF Export ---
