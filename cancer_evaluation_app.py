@@ -1,3 +1,14 @@
+import gspread
+from oauth2client.service_account import ServiceAccountCredentials
+def save_to_google_sheet(record):
+    scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
+    creds = ServiceAccountCredentials.from_json_keyfile_name("credentials.json", scope)
+    client = gspread.authorize(creds)
+
+    sheet = client.open("Evaluations").sheet1  # Your Google Sheet name
+    sheet.append_row(list(record.values()))
+    
+
 import streamlit as st
 from datetime import date
 import pandas as pd
@@ -165,7 +176,8 @@ if not disabled and st.button("🔍 Get Result"):
             df = pd.concat([df, pd.DataFrame([record])], ignore_index=True)
         else:
             df = pd.DataFrame([record])
-        df.to_csv(file, index=False)
+       #tony df.to_csv(file, index=False)
+        save_to_google_sheet(record)
         st.info("✅ Evaluation saved successfully to evaluations.csv")
 
         # --- PDF Export ---
