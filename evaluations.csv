@@ -1,0 +1,6 @@
+Evaluation Date,Patient Name,Insured Number,FDA Approved,Guideline Supported,Stage,Prior Treatment Failed,Age,ECOG,Score,Result,Cost of Protocol,Survival Gain
+6/9/2025,,,YES,YES,1,YES,55,ECOG 0,55,REJECTED,,
+6/9/2025,,,YES,YES,1,YES,0,ECOG 0,55,REJECTED,,
+6/9/2025,,,YES,YES,4,NO,70,ECOG 3,41,REJECTED,,
+2025-06-09,,,YES,YES,3,YES,55,ECOG 0,90,APPROVED,10000.0,3.0
+2025-06-09,test mr,111111,YES,NO,2,YES,58,ECOG 1,85,APPROVED,10000.0,7.0
